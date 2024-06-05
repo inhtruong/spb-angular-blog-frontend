@@ -108,6 +108,12 @@ export class UserManagementComponent {
     }
   };
 
+  /**
+   * Saves the user data. If the user has an ID, it updates the user details.
+   * Otherwise, it creates a new user.
+   *
+   * @return {void} This function does not return anything.
+   */
   save() {
     if(this.user.id) {
       // update

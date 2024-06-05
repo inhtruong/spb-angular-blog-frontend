@@ -25,15 +25,16 @@
     <!-- Column name -->
     <ng-template pTemplate="header">
         <tr>
-            <th style="width:22%">Email</th>
-            <th style="width:22%">Full Name</th>
-            <th style="width:22%">Role</th>
-            <th style="width:22%">Status</th>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Full Name</th>
+            <th>Role</th>
+            <th>Status</th>
         </tr>
         <tr>
             <th></th>
             <th></th>
-            
+            <th></th>
             <th>
                 <p-columnFilter field="roleId" matchMode="equals" [showMenu]="false">
                     <ng-template pTemplate="filter" let-value let-filter="filterCallback">
@@ -56,6 +57,9 @@
     <!-- Body -->
     <ng-template pTemplate="body" let-user>
         <tr class="cursor-pointer" (dblclick)="openDialogEdit(user)">
+            <td>
+                {{ user.id }}
+            </td>
             <td>
                 {{ user.email }}
             </td>
@@ -128,7 +132,7 @@
     
                 <div class="flex flex-column gap-2 mb-4">
                     <label for="createdAt">Created By</label>
-                    <input pInputText id="createdAt" [(ngModel)]="user.createdAt" readonly>
+                    <input pInputText id="createdAt" [(ngModel)]="user.createdBy" readonly>
                 </div>
     
                 <div class="flex flex-column gap-2 mb-4">
@@ -138,7 +142,7 @@
     
                 <div class="flex flex-column gap-2 mb-4">
                     <label for="modifiedAt">Modified At</label>
-                    <input pInputText id="modifiedAt" [(ngModel)]="user.modifiedAt" readonly> 
+                    <input pInputText id="modifiedAt" [(ngModel)]="user.modifiedBy" readonly> 
                 </div>
             </ng-container>
 
