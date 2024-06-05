@@ -3,9 +3,8 @@ export interface Post {
     title?: string;
     content?: string;
     tags?: string[];
-    active?: boolean;
     createdDate?: string;
-    createdAt?: string;
+    createdBy?: string;
     modifiedDate?: string;
-    modifiedAt?: string;
+    modifiedBy?: string;
 }
